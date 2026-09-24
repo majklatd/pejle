@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="sk" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Rank Up Masterclass | Sprievodca pre najvyšší rank</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for eSports Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Inter & Rajdhani for gaming feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        csorange: '#FF6B00',
+                        csorangeHover: '#E05E00',
+                        csdark: '#0D0E12',
+                        cscard: '#151821',
+                        cscardBorder: '#262A38',
+                        csblue: '#00A3FF',
+                        cspurple: '#8A2BE2'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Rajdhani', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0D0E12;
+            color: #E2E8F0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        /* Glassmorphism styling */
+        .glass-panel {
+            background: rgba(21, 24, 33, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-glow {
+            background: rgba(21, 24, 33, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 107, 0, 0.15);
+        }
+
+        /* Custom glow effects */
+        .glow-orange {
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+        }
+
+        .glow-orange-lg {
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.25);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0E12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262A38;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6B00;
+        }
+
+        /* Custom checkbox style */
+        .custom-checkbox:checked {
+            background-color: #FF6B00;
+            border-color: #FF6B00;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-csorange selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-cscardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-csorange to-yellow-500 flex items-center justify-center font-display font-bold text-black text-xl shadow-lg">
+                        CS2
+                    </div>
+                    <span class="font-display font-bold text-xl tracking-wider text-white">
+                        RANK UP <span class="text-csorange">MASTERCLASS</span>
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#planner" class="text-gray-300 hover:text-csorange transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-xs"></i> Plánovač
+                    </a>
+                    <a href="#utility" class="text-gray-300 hover:text-csorange transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-bomb text-xs"></i> Smoke Spotter
+                    </a>
+                    <a href="#tips" class="text-gray-300 hover:text-csorange transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-xs"></i> Tipy & Stratégie
+                    </a>
+                    <a href="#checklist" class="text-gray-300 hover:text-csorange transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-xs"></i> Daily Checklist
+                    </a>
+                </div>
+
+                <div>
+                    <a href="#planner" class="bg-csorange hover:bg-csorangeHover text-black font-display font-bold px-4 py-2 rounded-lg text-sm tracking-wide transition-all transform hover:scale-105 shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-crosshair"></i> ZVOL RANK
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden bg-gradient-to-b from-cscard via-csdark to-csdark border-b border-cscardBorder">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-csorange/10 border border-csorange/30 text-csorange text-xs font-semibold uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-csorange animate-pulse"></span> CS2 Premier & Competitive Guide 2026
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-display font-extrabold tracking-tight text-white uppercase leading-none mb-6">
+                    Dosiahni <span class="text-transparent bg-clip-text bg-gradient-to-r from-csorange via-yellow-400 to-csorange">Global Elite</span> & 25k+ Rating
+                </h1>
+                <p class="text-gray-400 text-lg sm:text-xl mb-8 leading-relaxed font-light">
+                    Kompletný interaktívny tréningový systém, najlepšie Smoke/Flash nady pre Sub-Tick mechaniku a profesionálne stratégie na vytiahnutie tvojho CS2 ranku na maximum.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#planner" class="bg-csorange hover:bg-csorangeHover text-black font-display font-bold text-lg px-8 py-3.5 rounded-xl shadow-lg hover:shadow-csorange/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-3">
+                        <i class="fa-solid fa-chart-line text-xl"></i> Vypočítať Tréningový Plán
+                    </a>
+                    <a href="#utility" class="glass-panel hover:bg-cscardBorder/50 text-white font-display font-bold text-lg px-8 py-3.5 rounded-xl border border-cscardBorder transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-map-location-dot text-csorange text-xl"></i> Smoke Návody
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+                <div class="glass-panel p-4 rounded-xl text-center border-t-2 border-t-csorange">
+                    <div class="text-3xl font-display font-bold text-white">Sub-Tick</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Perfektné Nady</div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl text-center border-t-2 border-t-csblue">
+                    <div class="text-3xl font-display font-bold text-white">Mirage & Inferno</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Kľúčové Mapy</div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl text-center border-t-2 border-t-yellow-500">
+                    <div class="text-3xl font-display font-bold text-white">Crosshair & Aim</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Miestne Tréningy</div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl text-center border-t-2 border-t-cspurple">
+                    <div class="text-3xl font-display font-bold text-white">Mental Game</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">No-Tilt Rutina</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator & Training Planner Section -->
+    <section id="planner" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-display font-bold text-white uppercase tracking-wider">
+                <i class="fa-solid fa-calculator text-csorange mr-2"></i> Interaktívny Tréningový Plánovač
+            </h2>
+            <p class="text-gray-400 text-sm mt-2">Zvoľ svoj aktuálny Premier Rank a získaš denný tréningový rozpis ušitý na mieru.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Input Form -->
+            <div class="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-2xl border border-cscardBorder">
+                <h3 class="text-xl font-display font-bold text-white mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-user-ninja text-csorange"></i> Nastavenie Hráča
+                </h3>
+
+                <form id="calculatorForm" onsubmit="return false;" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Tvoj CS2 Rating / Rank Tier</label>
+                        <select id="rankTier" onchange="calculatePlan()" class="w-full bg-cscard border border-cscardBorder rounded-xl px-4 py-3 text-white focus:outline-none focus:border-csorange transition-colors font-medium">
+                            <option value="beginner">0 - 4,999 CS Rating (Silver / Nováčik)</option>
+                            <option value="intermediate" selected>5,000 - 9,999 CS Rating (Gold Nova / Pokročilý)</option>
+                            <option value="advanced">10,000 - 14,999 CS Rating (Master Guardian / Stredne Pokročilý)</option>
+                            <option value="elite">15,000 - 19,999 CS Rating (EAGLE / Supreme)</option>
+                            <option value="pro">20,000+ CS Rating (Global Elite / Pro Level)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Časový rozpočet na deň</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button type="button" onclick="setTimeBudget('low')" id="timeLow" class="time-btn py-2.5 px-3 rounded-lg border border-cscardBorder bg-cscard text-sm font-semibold text-gray-300 hover:border-csorange transition-all">1 - 1.5 hod</button>
+                            <button type="button" onclick="setTimeBudget('med')" id="timeMed" class="time-btn py-2.5 px-3 rounded-lg border border-csorange bg-csorange/20 text-sm font-semibold text-white transition-all">2 - 3 hod</button>
+                            <button type="button" onclick="setTimeBudget('high')" id="timeHigh" class="time-btn py-2.5 px-3 rounded-lg border border-cscardBorder bg-cscard text-sm font-semibold text-gray-300 hover:border-csorange transition-all">4+ hod</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Hlavné zameranie na zlepšenie</label>
+                        <select id="focusArea" onchange="calculatePlan()" class="w-full bg-cscard border border-cscardBorder rounded-xl px-4 py-3 text-white focus:outline-none focus:border-csorange transition-colors font-medium">
+                            <option value="aim">Aim & Reflexy (Kills & Duely)</option>
+                            <option value="utility">Utility & Smokovanie (Taktika & Pomoc tímu)</option>
+                            <option value="gameplay">Game Sense & Pozicionovanie (Clutch & Prežívanie)</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Output Display -->
+            <div class="lg:col-span-7 glass-panel-glow p-6 sm:p-8 rounded-2xl relative overflow-hidden">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-cscardBorder">
+                    <div>
+                        <span class="text-xs text-csorange font-bold uppercase tracking-widest">Odporúčaný Rutinný Plán</span>
+                        <h3 id="planTitle" class="text-2xl font-display font-bold text-white">Gold Nova / Pokročilý Plán</h3>
+                    </div>
+                    <div id="planBadge" class="px-3 py-1 bg-csorange/20 border border-csorange/50 text-csorange text-xs font-bold rounded-lg uppercase">
+                        Vyvážený Tréning
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-cscard p-3.5 rounded-xl border border-cscardBorder text-center">
+                        <i class="fa-solid fa-bullseye text-csorange mb-1 text-lg"></i>
+                        <div id="calcAim" class="text-xl font-bold font-display text-white">20 min</div>
+                        <div class="text-[11px] text-gray-400">Aim Lab / Bots</div>
+                    </div>
+                    <div class="bg-cscard p-3.5 rounded-xl border border-cscardBorder text-center">
+                        <i class="fa-solid fa-bomb text-csblue mb-1 text-lg"></i>
+                        <div id="calcUtil" class="text-xl font-bold font-display text-white">10 min</div>
+                        <div class="text-[11px] text-gray-400">Nades practice</div>
+                    </div>
+                    <div class="bg-cscard p-3.5 rounded-xl border border-cscardBorder text-center">
+                        <i class="fa-solid fa-gamepad text-yellow-500 mb-1 text-lg"></i>
+                        <div id="calcMatches" class="text-xl font-bold font-display text-white">2 - 3</div>
+                        <div class="text-[11px] text-gray-400">Zápasy (Premier)</div>
+                    </div>
+                    <div class="bg-cscard p-3.5 rounded-xl border border-cscardBorder text-center">
+                        <i class="fa-solid fa-video text-cspurple mb-1 text-lg"></i>
+                        <div id="calcReplay" class="text-xl font-bold font-display text-white">10 min</div>
+                        <div class="text-[11px] text-gray-400">Replay Analýza</div>
+                    </div>
+                </div>
+
+                <!-- Structured Advice -->
+                <div class="space-y-3 text-sm">
+                    <h4 class="font-display font-bold text-white text-base uppercase tracking-wide text-gray-200">
+                        <i class="fa-solid fa-list-ol text-csorange mr-1"></i> Postup tréningovej rutiny pre dnešok:
+                    </h4>
+                    <ul id="planSteps" class="space-y-2 text-gray-300">
+                        <!-- Dynamic Steps injected by JS -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Utility & Smoke Spotter -->
+    <section id="utility" class="py-16 bg-cscard/40 border-y border-cscardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-display font-bold text-white uppercase tracking-wider">
+                    <i class="fa-solid fa-bomb text-csorange mr-2"></i> Utility & Smoke Spotter (Sub-Tick)
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Nauč sa základné aj pokročilé kľúčové dymovnice pre najhranejšie mapy v CS2.</p>
+            </div>
+
+            <!-- Map Selector Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8" id="mapTabs">
+                <button onclick="selectMap('mirage')" id="tab-mirage" class="map-tab px-5 py-2.5 rounded-xl font-display font-bold text-sm tracking-wide transition-all bg-csorange text-black shadow-lg">
+                    <i class="fa-solid fa-map mr-1.5"></i> MIRAGE
+                </button>
+                <button onclick="selectMap('inferno')" id="tab-inferno" class="map-tab px-5 py-2.5 rounded-xl font-display font-bold text-sm tracking-wide transition-all bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange">
+                    <i class="fa-solid fa-fire mr-1.5"></i> INFERNO
+                </button>
+                <button onclick="selectMap('dust2')" id="tab-dust2" class="map-tab px-5 py-2.5 rounded-xl font-display font-bold text-sm tracking-wide transition-all bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange">
+                    <i class="fa-solid fa-sun mr-1.5"></i> DUST II
+                </button>
+                <button onclick="selectMap('nuke')" id="tab-nuke" class="map-tab px-5 py-2.5 rounded-xl font-display font-bold text-sm tracking-wide transition-all bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange">
+                    <i class="fa-solid fa-radiation mr-1.5"></i> NUKE
+                </button>
+                <button onclick="selectMap('ancient')" id="tab-ancient" class="map-tab px-5 py-2.5 rounded-xl font-display font-bold text-sm tracking-wide transition-all bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange">
+                    <i class="fa-solid fa-tree mr-1.5"></i> ANCIENT
+                </button>
+            </div>
+
+            <!-- Grenade Cards Grid -->
+            <div id="utilityGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically generated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy & Tips Categories Section -->
+    <section id="tips" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+                <h2 class="text-3xl font-display font-bold text-white uppercase tracking-wider">
+                    <i class="fa-solid fa-graduation-cap text-csorange mr-2"></i> Knižnica Stratégií & Tipy
+                </h2>
+                <p class="text-gray-400 text-sm mt-1">Filtruj rady podľa kategórie alebo vyhľadaj konkrétnu oblasť.</p>
+            </div>
+
+            <!-- Search input & Category Filters -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-gray-500 text-sm"></i>
+                    <input type="text" id="searchInput" oninput="filterTips()" placeholder="Hľadať tip (napr. spray, mental...)..." class="bg-cscard border border-cscardBorder text-white text-sm rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-csorange w-full sm:w-64">
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2 mb-8">
+            <button onclick="setCategoryFilter('all')" id="cat-all" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-csorange text-black transition-all">Všetko</button>
+            <button onclick="setCategoryFilter('aim')" id="cat-aim" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange transition-all"><i class="fa-solid fa-crosshair mr-1"></i> Aim & Mechanics</button>
+            <button onclick="setCategoryFilter('eco')" id="cat-eco" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange transition-all"><i class="fa-solid fa-coins mr-1"></i> Ekonómia & Radar</button>
+            <button onclick="setCategoryFilter('util')" id="cat-util" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange transition-all"><i class="fa-solid fa-smog mr-1"></i> Sub-tick Utility</button>
+            <button onclick="setCategoryFilter('mental')" id="cat-mental" class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-cscard text-gray-400 border border-cscardBorder hover:border-csorange transition-all"><i class="fa-solid fa-brain mr-1"></i> Psychológia & Teamplay</button>
+        </div>
+
+        <!-- Cards Container -->
+        <div id="tipsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamically populated -->
+        </div>
+    </section>
+
+    <!-- Daily Match Checklist -->
+    <section id="checklist" class="py-16 bg-cscard/40 border-t border-cscardBorder">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-cscardBorder relative">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-cscardBorder">
+                    <div>
+                        <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-square-check text-csorange"></i> Pre-Match & Daily Checklist
+                        </h2>
+                        <p class="text-xs text-gray-400 mt-1">Splň tento zoznam pred vstupom do prvého CS2 Premier zápasu dňa.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span id="checklistProgressText" class="text-xs font-bold text-csorange uppercase">0% Splnené</span>
+                        <button onclick="resetChecklist()" class="text-xs text-gray-400 hover:text-white underline transition-colors">Vynulovať</button>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-cscard h-2.5 rounded-full overflow-hidden mb-6 border border-cscardBorder">
+                    <div id="checklistProgressBar" class="bg-gradient-to-r from-csorange to-yellow-400 h-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <!-- Checkbox List -->
+                <div class="space-y-3" id="checklistItems">
+                    <!-- Dynamic Checklist Items -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Detailed Smoke / Tip Guide -->
+    <div id="guideModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+        <div class="glass-panel max-w-2xl w-full p-6 sm:p-8 rounded-2xl border border-cscardBorder relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl w-8 h-8 flex items-center justify-center rounded-lg bg-cscard border border-cscardBorder">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-cscardBorder py-8 mt-12 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <div class="w-6 h-6 rounded bg-csorange flex items-center justify-center text-black font-display font-bold text-xs">CS2</div>
+                <span class="font-display font-bold text-white tracking-wider">RANK UP MASTERCLASS</span>
+            </div>
+            <p>© 2026 CS2 Masterclass Guide. Všetky práva vyhradené. Vytvorené pre komunitu Counter-Strike 2.</p>
+            <p class="mt-1 text-gray-600">Counter-Strike je registrovaná ochranná známka spoločnosti Valve Corporation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data Structures
+        const timeBudgetMode = 'med';
+
+        // Utility Smoketer Data
+        const utilityData = {
+            mirage: [
+                { id: 'm1', title: 'Window Smoke z T-Spawn', map: 'Mirage', side: 'T', diff: 'Stredná', type: 'Smoke', keys: 'Jumpthrow + W', desc: 'Najdôležitejší smoke na Mirage. Postav sa do rohu pri koši na T-spawne, zamier na pravý roh zábradlia a použi Jumpthrow.' },
+                { id: 'm2', title: 'A-Site CT Smoke', map: 'Mirage', side: 'T', diff: 'Ľahká', type: 'Smoke', keys: 'Left Click', desc: 'Kľúčový pre execute na A. Vylez na drevenú paletu pri Palace/A-Short, zamier na vrchol stĺpu a klasicky hodiť.' },
+                { id: 'm3', title: 'B-Site Short Smoke', map: 'Mirage', side: 'T', diff: 'Ľahká', type: 'Smoke', keys: 'Left Click', desc: 'Zakrýva výhľad z B-Short / Catwalk. Hádže sa z B-Apps od okna.' },
+                { id: 'm4', title: 'Con (Connector) Smoke', map: 'Mirage', side: 'T', diff: 'Stredná', type: 'Smoke', keys: 'Jumpthrow', desc: 'Blokuje snajpra v Connectore. Hádže sa z T-Apps alebo top Midu.' }
+            ],
+            inferno: [
+                { id: 'i1', title: 'Coffins Smoke na B-Site', map: 'Inferno', side: 'T', diff: 'Ľahká', type: 'Smoke', keys: 'Left Click', desc: 'Blokuje AWP hráča na Coffins. Postav sa k banánovému rohu, zamier na vrchol tretieho dreveného stĺpu.' },
+                { id: 'i2', title: 'CT Spawn Smoke na B', map: 'Inferno', side: 'T', diff: 'Ľahká', type: 'Smoke', keys: 'Left Click', desc: 'Zabraňuje CT rotácii cez CT spawn na B site.' },
+                { id: 'i3', title: 'A-Long Arch Smoke', map: 'Inferno', side: 'T', diff: 'Stredná', type: 'Smoke', keys: 'Jumpthrow', desc: 'Perfektné na odrezanie Archu pri A executovaní.' }
+            ],
+            dust2: [
+                { id: 'd1', title: 'Mid Door Smoke z T-Spawn', map: 'Dust II', side: 'T', diff: 'Ľahká', type: 'Smoke', keys: 'Left Click', desc: 'V CS2 je Mid smoke extrémne dôležitý pre rýchly prechod cez Mid bez rizika od AWP.' },
+                { id: 'd2', title: 'A-Long Corner Flash', map: 'Dust II', side: 'T', diff: 'Ľahká', type: 'Flash', keys: 'Runthrow', desc: 'Pop-flash nad budovu Long doors, nepriateľ na Long nemôže zareagovať.' }
+            ],
+            nuke: [
+                { id: 'n1', title: 'Outside Cross Smokes (Set-up)', map: 'Nuke', side: 'T', diff: 'Ťažká', type: 'Smoke Duo', keys: 'Jumpthrow', desc: '2 dymovnice vytvoria stenu cez Outside na prechod do Secret bez toho, aby ťa zameriaval AWP z Garáže.' }
+            ],
+            ancient: [
+                { id: 'a1', title: 'Donut Smoke z T-Spawn', map: 'Ancient', side: 'T', diff: 'Stredná', type: 'Smoke', keys: 'Jumpthrow', desc: 'Odreže kontrolu strednej časti A-site z Donutu.' }
+            ]
+        };
+
+        // Strategy Tips Data
+        const tipsData = [
+            {
+                id: 1,
+                category: 'aim',
+                title: 'Counter-Strafing & Sub-Tick Timing',
+                desc: 'V CS2 zohráva presnosť v milisekundách kľúčovú rolu. Ak chceš vystreliť presne, pri pohybe doprava (D) stlač kláves doľava (A) na okamžité zastavenie pred výstrelom.',
+                badge: 'Aim & Mechanics'
+            },
+            {
+                id: 2,
+                category: 'aim',
+                title: 'Crosshair Placement (Držanie výšky hlavy)',
+                desc: 'Nikdy nepozeraj do zeme. Vždy drž svoj zamierovač v úrovni hlavy nepriateľa na mieste, odkiaľ môže vyjsť. Zníži to reakčný čas o 50%.',
+                badge: 'Aim & Mechanics'
+            },
+            {
+                id: 3,
+                category: 'eco',
+                title: 'CS2 Loss Bonus & Force Buy Ekonómia',
+                desc: 'Sleduj peniaze tímu. Ak máte pod $2,000 po prehratom kole, robí sa "Full Eco". Pri vyhratom pistolovom kole VŽDY kupujte samopaly (MAC-10 / MP9) + Kevlar.',
+                badge: 'Ekonómia & Radar'
+            },
+            {
+                id: 4,
+                category: 'eco',
+                title: 'Radar Zoom & Info Awareness',
+                desc: 'Nastav si radar tak, aby si videl CELÚ mapu (`cl_radar_scale 0.35`). Získaš okamžitú informáciu o pozícii bomby a nepriateľoch, aj bez hlasovej komunikácie.',
+                badge: 'Ekonómia & Radar'
+            },
+            {
+                id: 5,
+                category: 'util',
+                title: 'Volumetrické Dymovnice & Granáty',
+                desc: 'Nezabúdaj, že v CS2 HE granát dočasne rozptýli dym zo smoke-u na 2 sekundy! Použi to na prekvapivý kill cez dymovnicu.',
+                badge: 'Sub-tick Utility'
+            },
+            {
+                id: 6,
+                category: 'mental',
+                title: 'Mental Reset & Tilt Management',
+                desc: 'Prehrávate 0:5? Mute-ni toxických spoluhráčov a sústreď sa len na svoje herné rozhodnutia. CS2 má comebackové mechaniky vďaka MR12 systému.',
+                badge: 'Psychológia'
+            }
+        ];
+
+        // Checklist Data
+        const checklistItemsData = [
+            { id: 'chk1', text: 'Strečing zápästia a prstov (2 min)' },
+            { id: 'chk2', text: '10-15 minút Warm-up v Aim Lab alebo na Bot mape' },
+            { id: 'chk3', text: 'Kontrola zvuku & skontrolovanie radaru v nastaveniach' },
+            { id: 'chk4', text: 'Mute toxických / rušivých spoluhráčov hneď v rozcvičke' },
+            { id: 'chk5', text: 'Komunikácia výhradne stručných info (Kde, Kto, Koľko HP)' },
+            { id: 'chk6', text: 'Pauza po 2 prehratých zápasoch za sebou (Reset mysle)' }
+        ];
+
+        let selectedMap = 'mirage';
+        let currentFilterCategory = 'all';
+
+        // Initializer
+        window.onload = function() {
+            calculatePlan();
+            renderUtility('mirage');
+            renderTips();
+            renderChecklist();
+        };
+
+        // --- CALCULATOR LOGIC ---
+        let currentTimeOption = 'med';
+
+        function setTimeBudget(type) {
+            currentTimeOption = type;
+            document.querySelectorAll('.time-btn').forEach(btn => {
+                btn.classList.remove('border-csorange', 'bg-csorange/20', 'text-white');
+                btn.classList.add('border-cscardBorder', 'bg-cscard', 'text-gray-300');
+            });
+
+            const selectedBtn = type === 'low' ? 'timeLow' : type === 'med' ? 'timeMed' : 'timeHigh';
+            document.getElementById(selectedBtn).classList.add('border-csorange', 'bg-csorange/20', 'text-white');
+            
+            calculatePlan();
+        }
+
+        function calculatePlan() {
+            const tier = document.getElementById('rankTier').value;
+            const focus = document.getElementById('focusArea').value;
+
+            let aimMin = 15;
+            let utilMin = 10;
+            let matches = '2 - 3';
+            let replayMin = 10;
+            let title = 'Gold Nova / Pokročilý Plán';
+
+            if (tier === 'beginner') {
+                title = 'Silver / Začiatočnícky Plán (Focus na základy)';
+                aimMin = 25;
+                utilMin = 5;
+                matches = '1 - 2';
+                replayMin = 5;
+            } else if (tier === 'intermediate') {
+                title = 'Gold Nova / Pokročilý Plán (Vyvážený)';
+                aimMin = 20;
+                utilMin = 15;
+                matches = '2 - 3';
+                replayMin = 10;
+            } else if (tier === 'advanced') {
+                title = 'MG & Eagle Plán (Kombinovaný)';
+                aimMin = 20;
+                utilMin = 20;
+                matches = '3';
+                replayMin = 15;
+            } else if (tier === 'elite' || tier === 'pro') {
+                title = 'High Tier Premier / Pro Routine';
+                aimMin = 30;
+                utilMin = 25;
+                matches = '3 - 4';
+                replayMin = 20;
+            }
+
+            // Time budget adjustments
+            if (currentTimeOption === 'low') {
+                aimMin = Math.round(aimMin * 0.6);
+                utilMin = Math.round(utilMin * 0.5);
+                matches = '1';
+                replayMin = 5;
+            } else if (currentTimeOption === 'high') {
+                aimMin += 15;
+                utilMin += 10;
+                matches = '4+';
+                replayMin += 10;
+            }
+
+            // Focus area boost
+            if (focus === 'aim') aimMin += 10;
+            if (focus === 'utility') utilMin += 10;
+            if (focus === 'gameplay') replayMin += 10;
+
+            // Render Results
+            document.getElementById('planTitle').innerText = title;
+            document.getElementById('calcAim').innerText = `${aimMin} min`;
+            document.getElementById('calcUtil').innerText = `${utilMin} min`;
+            document.getElementById('calcMatches').innerText = matches;
+            document.getElementById('calcReplay').innerText = `${replayMin} min`;
+
+            // Steps
+            const stepsUl = document.getElementById('planSteps');
+            stepsUl.innerHTML = `
+                <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-csorange mt-1"></i> <span><strong>Krok 1:</strong> Rozcvička (${aimMin} min) - 1000 botov na Workshop Aim mape + Spray control na AK-47/M4A1-S.</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-csorange mt-1"></i> <span><strong>Krok 2:</strong> Utility Tréning (${utilMin} min) - Precvič si 3 dôležité smokey na mape pre dnešný deň.</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-csorange mt-1"></i> <span><strong>Krok 3:</strong> Competitive / Premier Matchmaking (${matches} zápasy) - Hraj s čistou hlavou a fokusom na komunikáciu.</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-csorange mt-1"></i> <span><strong>Krok 4:</strong> Replay Analýza (${replayMin} min) - Pozri si 1 prehratý zápas a analyzuj svoje úmrtia.</span></li>
+            `;
+        }
+
+        // --- UTILITY SPOTTER LOGIC ---
+        function selectMap(mapName) {
+            selectedMap = mapName;
+            document.querySelectorAll('.map-tab').forEach(btn => {
+                btn.classList.remove('bg-csorange', 'text-black', 'shadow-lg');
+                btn.classList.add('bg-cscard', 'text-gray-400');
+            });
+
+            const activeBtn = document.getElementById(`tab-${mapName}`);
+            if(activeBtn) {
+                activeBtn.classList.add('bg-csorange', 'text-black', 'shadow-lg');
+                activeBtn.classList.remove('bg-cscard', 'text-gray-400');
+            }
+
+            renderUtility(mapName);
+        }
+
+        function renderUtility(mapName) {
+            const grid = document.getElementById('utilityGrid');
+            const items = utilityData[mapName] || [];
+
+            if (items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-8 text-gray-500">Pre túto mapu pripravujeme návody...</div>`;
+                return;
+            }
+
+            grid.innerHTML = items.map(item => `
+                <div class="glass-panel p-5 rounded-2xl border border-cscardBorder hover:border-csorange/50 transition-all group">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-2.5 py-1 rounded bg-csorange/20 border border-csorange/40 text-csorange font-bold text-xs uppercase">${item.type}</span>
+                        <span class="text-xs text-gray-400 font-semibold"><i class="fa-solid fa-keyboard mr-1 text-gray-500"></i> ${item.keys}</span>
+                    </div>
+                    <h4 class="text-lg font-display font-bold text-white group-hover:text-csorange transition-colors">${item.title}</h4>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">${item.desc}</p>
+                    <button onclick="openModal('${item.title}', '${item.desc}', '${item.keys}', '${item.map}')" class="mt-4 text-xs text-csorange font-bold flex items-center gap-1 hover:underline">
+                        Zobraziť detailný fotonávod <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // --- TIPS & STRATEGY LOGIC ---
+        function setCategoryFilter(cat) {
+            currentFilterCategory = cat;
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-csorange', 'text-black');
+                btn.classList.add('bg-cscard', 'text-gray-400');
+            });
+            const activeBtn = document.getElementById(`cat-${cat}`);
+            if(activeBtn) {
+                activeBtn.classList.add('bg-csorange', 'text-black');
+                activeBtn.classList.remove('bg-cscard', 'text-gray-400');
+            }
+            renderTips();
+        }
+
+        function filterTips() {
+            renderTips();
+        }
+
+        function renderTips() {
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            const container = document.getElementById('tipsContainer');
+
+            const filtered = tipsData.filter(item => {
+                const matchCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
+                const matchSearch = item.title.toLowerCase().includes(searchVal) || item.desc.toLowerCase().includes(searchVal);
+                return matchCategory && matchSearch;
+            });
+
+            if(filtered.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">Žiadne stratégie nezodpovedajú tvojmu vyhľadávaniu.</div>`;
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <div class="glass-panel p-6 rounded-2xl border border-cscardBorder hover:border-csorange/40 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-csorange mb-2 flex items-center gap-1.5">
+                            <i class="fa-solid fa-tag text-[10px]"></i> ${item.badge}
+                        </div>
+                        <h3 class="text-lg font-display font-bold text-white mb-2">${item.title}</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- CHECKLIST LOGIC WITH LOCALSTORAGE ---
+        function renderChecklist() {
+            const container = document.getElementById('checklistItems');
+            const savedState = JSON.parse(localStorage.getItem('cs2_checklist_state') || '{}');
+
+            container.innerHTML = checklistItemsData.map((item, idx) => {
+                const isChecked = savedState[item.id] ? 'checked' : '';
+                return `
+                    <label class="flex items-center gap-3 p-3 rounded-xl bg-cscard border border-cscardBorder hover:border-csorange/30 cursor-pointer transition-all">
+                        <input type="checkbox" onchange="toggleCheckitem('${item.id}')" ${isChecked} class="custom-checkbox w-5 h-5 rounded border-cscardBorder text-csorange focus:ring-0">
+                        <span class="text-sm text-gray-200 ${isChecked ? 'line-through text-gray-500' : ''}">${item.text}</span>
+                    </label>
+                `;
+            }).join('');
+
+            updateChecklistProgress();
+        }
+
+        function toggleCheckitem(id) {
+            const savedState = JSON.parse(localStorage.getItem('cs2_checklist_state') || '{}');
+            savedState[id] = !savedState[id];
+            localStorage.setItem('cs2_checklist_state', JSON.stringify(savedState));
+            renderChecklist();
+        }
+
+        function resetChecklist() {
+            localStorage.removeItem('cs2_checklist_state');
+            renderChecklist();
+        }
+
+        function updateChecklistProgress() {
+            const savedState = JSON.parse(localStorage.getItem('cs2_checklist_state') || '{}');
+            const checkedCount = Object.values(savedState).filter(Boolean).length;
+            const total = checklistItemsData.length;
+            const percentage = Math.round((checkedCount / total) * 100);
+
+            document.getElementById('checklistProgressBar').style.width = `${percentage}%`;
+            document.getElementById('checklistProgressText').innerText = `${percentage}% Splnené (${checkedCount}/${total})`;
+        }
+
+        // --- MODAL LOGIC ---
+        function openModal(title, desc, keys, map) {
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <div class="inline-block px-2.5 py-1 rounded bg-csorange/20 border border-csorange/40 text-csorange text-xs font-bold uppercase mb-3">${map} Sub-Tick Guide</div>
+                <h3 class="text-2xl font-display font-bold text-white mb-3">${title}</h3>
+                <p class="text-sm text-gray-300 leading-relaxed mb-6">${desc}</p>
+                <div class="bg-cscard p-4 rounded-xl border border-cscardBorder mb-6 space-y-2">
+                    <div class="text-xs text-gray-400 font-bold uppercase tracking-wider">Klávesová skratka / Hod:</div>
+                    <div class="text-csorange font-display font-bold text-lg">${keys}</div>
+                </div>
+                <div class="bg-cscard/80 h-48 rounded-xl border border-cscardBorder flex flex-col items-center justify-center text-gray-500 text-sm">
+                    <i class="fa-solid fa-image text-3xl mb-2 text-gray-600"></i>
+                    <span>Ukážka mierenia zamierovača pre ${title}</span>
+                </div>
+            `;
+            document.getElementById('guideModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('guideModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
